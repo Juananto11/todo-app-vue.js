@@ -1,8 +1,11 @@
-const app = new Vue({
-  el: '#appVue',
-  data: {
-    list: [],
-    newTask: '',
+Vue.component('todo-app', {
+  // props: ['list'],
+  template: '#todo',
+  data () {
+    return {
+      list: [],
+      newTask: '',
+    }
   },
   methods: {
     addTask: function () {
@@ -20,4 +23,8 @@ const app = new Vue({
       this.list.splice(i, 1)
     }
   }
+})
+
+const app = new Vue({
+  el: '#appVue',
 })
