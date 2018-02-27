@@ -1,3 +1,3 @@
 # Lista de tareas hecha con Vue.js
 
-### Se modifico la lista de tareas usando un componente global
+### Se modifico la lista de tareas usando Vue-CLI
