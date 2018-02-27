@@ -6,7 +6,7 @@ const app = new Vue({
   },
   methods: {
     addTask: function () {
-      if (this.task === '') {
+      if (this.newTask === '') {
         alert('Ingresa una tarea')
       } else {
         this.list.push({
