@@ -100,6 +100,21 @@ button:focus {
 button:active {
   box-shadow: inset 1px 1px 3px black;
 }
+.dataTask {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-top: .8em;
+}
+.tareas {
+  color: dimgray;
+}
+.completadas {
+  color: green;
+}
+.pendientes {
+  color: red;
+}
 .list {
   margin-top: 1em;
 }
@@ -130,7 +145,7 @@ input[type="checkbox"] {
 }
 span p {
   margin: 0;
-  color: darkred;
+  color: red;
   cursor: pointer;
 }
 footer {

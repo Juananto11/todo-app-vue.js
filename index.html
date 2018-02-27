@@ -15,6 +15,11 @@
         <h2 v-else> Crear una tarea </h2>
         <input type="text" name="text" placeholder="Ingresa una tarea" v-model="newTask" v-on:keyup.enter="addTask" >
         <button v-on:click="addTask">Agregar tarea</button>
+        <div v-if="list.length > 0" class="dataTask">
+          <small class="tareas">Tareas: {{ list.length }}</small>
+          <small class="completadas">Completadas: {{ completadas }}</small>
+          <small class="pendientes">Pendientes: {{ pendientes }}</small>
+        </div>
       </div>
       <div class="add list">
         <h2 v-if="list.length > 0"> Listado de tareas </h2>

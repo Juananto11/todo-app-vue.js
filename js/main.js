@@ -19,5 +19,13 @@ const app = new Vue({
     removeTask: function (i) {
       this.list.splice(i, 1)
     }
+  },
+  computed: {
+    completadas () {
+      return this.list.map(el => el.completed).filter(el => el === true).length
+    },
+    pendientes () {
+      return this.list.map(el => el.completed).filter(el => el === false).length
+    }
   }
 })
