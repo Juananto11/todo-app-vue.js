@@ -13,7 +13,7 @@ Vue.component('todo-add', {
   },
   methods: {
     addTask () {
-      if (this.task === '') {
+      if (this.newTask === '') {
         alert('Ingresa una tarea')
       } else {
         this.list.push({
