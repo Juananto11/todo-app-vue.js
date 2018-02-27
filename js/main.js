@@ -1,14 +1,18 @@
 Vue.component('todo-app', {
-  // props: ['list'],
-  template: '#todo',
+  props: ['list'],
+  template: '#todo-app',
+})
+
+Vue.component('todo-add', {
+  props: ['list'],
+  template: '#todo-add',
   data () {
     return {
-      list: [],
-      newTask: '',
+      newTask: ''
     }
   },
   methods: {
-    addTask: function () {
+    addTask () {
       if (this.task === '') {
         alert('Ingresa una tarea')
       } else {
@@ -19,7 +23,14 @@ Vue.component('todo-app', {
       }
       this.newTask = ''
     },
-    removeTask: function (i) {
+  }
+})
+
+Vue.component('todo-list', {
+  props: ['list'],
+  template: '#todo-list',
+  methods: {
+    removeTask (i) {
       this.list.splice(i, 1)
     }
   }
@@ -27,4 +38,9 @@ Vue.component('todo-app', {
 
 const app = new Vue({
   el: '#appVue',
+  data () {
+    return {
+      list: []
+    }
+  }
 })
