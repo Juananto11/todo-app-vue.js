@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'TodoAdd',
@@ -23,27 +23,16 @@ export default {
   },
 
   methods: {
+    // ...mapMutations(['addTask'])
     addTask () {
-      if (this.newTask === '') {
-        alert('Ingresa una tarea')
-      } else {
-        this.list.push({
-          task: this.newTask,
-          completed: false
-        })
-      }
+      this.$store.commit('addTask', this.newTask)
       this.newTask = ''
     }
   },
 
-  computed: mapState({
-    list: state => state.list,
-    completadas () {
-      return this.list.map(el => el.completed).filter(el => el === true).length
-    },
-    pendientes () {
-      return this.list.map(el => el.completed).filter(el => el === false).length
-    }
+  computed: ({
+    ...mapState(['list']),
+    ...mapGetters(['completadas', 'pendientes'])
   })
 }
 </script>
