@@ -2,8 +2,8 @@
   .todo
     h1.title ToDo APP
     .container
-      todo-add(:list="list")
-      todo-list(:list="list")
+      todo-add
+      todo-list
     footer.footer
       p Powered by
         a(href="https://vuejs.org/" target="_black") Vue.js
@@ -18,11 +18,6 @@ export default {
   components: {
     TodoAdd,
     TodoList
-  },
-  data () {
-    return {
-      list: []
-    }
   }
 }
 </script>

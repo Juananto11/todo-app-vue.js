@@ -12,13 +12,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'TodoList',
-  props: ['list'],
+
   methods: {
     removeTask (i) {
       this.list.splice(i, 1)
     }
-  }
+  },
+
+  computed: mapState({
+    list: state => state.list
+  })
 }
 </script>

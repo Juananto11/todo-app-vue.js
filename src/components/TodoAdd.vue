@@ -11,14 +11,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'TodoAdd',
-  props: ['list'],
+
   data () {
     return {
       newTask: ''
     }
   },
+
   methods: {
     addTask () {
       if (this.newTask === '') {
@@ -32,13 +35,15 @@ export default {
       this.newTask = ''
     }
   },
-  computed: {
+
+  computed: mapState({
+    list: state => state.list,
     completadas () {
       return this.list.map(el => el.completed).filter(el => el === true).length
     },
     pendientes () {
       return this.list.map(el => el.completed).filter(el => el === false).length
     }
-  }
+  })
 }
 </script>
